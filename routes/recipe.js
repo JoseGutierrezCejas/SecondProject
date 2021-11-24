@@ -17,7 +17,7 @@ router.get("/", isLoggedIn, async (req, res) => {
     );
     // console.log(axiosCall.data.strMeal)
     const recipesInfo = axiosCall.data.meals; //esto es un array
-    console.log (recipesInfo.length)
+    // console.log (recipesInfo.length)
     res.render("./recipes.hbs", { recipesInfo });
   } catch (err) {
     console.log(err);
