@@ -33,7 +33,7 @@ require("./config/session.config")(app);
 // 👇 Start handling routes here
 app.use("/", require("./routes/home.js"));
 app.use("/", require("./routes/auth.js"));
-app.use("/characters", require("./routes/characters.js"))
+app.use("/recipe", require("./routes/recipe.js"))
 
 //App listener
 app.listen(PORT, () => {
