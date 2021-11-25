@@ -1,0 +1,20 @@
+<div class="“buttons”">
+  {{! <a href=“/logout”>Log out</a> }}
+</div>
+<div class="“container”">
+  <h1 class="“profile-text”">Welcome!
+    {{userName}}, here there are your favorites recipes:
+  </h1>
+</div>
+
+{{#each recipes}}
+  <form method="POST" action="/recipe/delete/{{this.id}}">
+    <button type="submit" id="unFavButton">Remove recipe</button>
+  </form>
+  <p>{{strMeal}}</p>
+
+  {{#each ingredients}}
+    <li>{{this}}</li>
+  {{/each}}
+
+{{/each}}

@@ -29,19 +29,14 @@
           <img src={{this.strMealThumb}} alt="{{this.strMeal}}">
           <a
           <p> Instructions: <br> {{this.strInstructions}}</p>
+          <p>Ingredients:<br> {{this.strIngredient1}},{{this.strIngredient2}},{{this.strIngredient3}},{{this.strIngredient4}},<br>{{this.strIngredient5}},{{this.strIngredient6}},{{this.strIngredient7}},{{this.strIngredient8}},{{this.strIngredient9}},{{this.strIngredient10}}</p>
           <p> Type of dish: {{this.strArea}}</p>
           <p>Watch the video:{{this.strYoutube}}</p>
-          <a>href="strYoutube"</a>
-          {{!-- <ul>
-            {{#each this.comics.items}}
-                <li>{{this.name}}</li>
-            {{/each}}
-          </ul> --}}
-          
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <form method="POST" action="/characters/create/{{this.id}}">
+          <form method="POST" action="/recipe/create/{{this.idMeal}}">
             <button type="submit" class="btn btn-primary">Add to Favorites</button>
           </form>
           

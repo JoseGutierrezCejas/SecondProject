@@ -90,7 +90,7 @@ router.post("/login", async (req, res) => {
   //Hacer login
   req.session.loggedUser = existingUser;
   console.log("SESSION ====> ,", req.session);
-  res.redirect('/')
+  res.redirect('/profile')
 });
 
 //POST logout
