@@ -3,11 +3,11 @@
 </div>
 <div class="“container”">
   <h1 class="“profile-text”">Welcome!
-    {{userName}}, here there are your favorites recipes:
+    {{userName}}, here there are your favorites recipes::
   </h1>
 </div>
 
-{{#each recipes}}
+{{!-- {{#each recipes}}
   <form method="POST" action="/recipe/delete/{{this.id}}">
     <button type="submit" id="unFavButton">Remove recipe</button>
   </form>
@@ -17,4 +17,54 @@
     <li>{{this}}</li>
   {{/each}}
 
+{{/each}} --}}
+
+<div class="row row-cols-1 row-cols-md-3 g-4" >
+  
+{{#each recipes}}
+  <div class="col">
+    <img src={{this.strMealThumb}}  class="card-img-top" alt="{{this.strMeal}}">
+    <div class="card-body">
+      <h5 class="card-title">{{this.strMeal}}</h5>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#{{this.idMeal}}">
+        Get Recipe
+      </button>
+      <form method="POST" action="/recipe/delete/{{this.id}}">
+    <button class= "btn btn-primary" type="submit" id="unFavButton">Remove recipe</button>
+  </form>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade black" id="{{this.idMeal}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{this.strMeal}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src={{this.strMealThumb}} alt="{{this.strMeal}}">
+          <a
+          <p> Instructions: <br> {{this.strInstructions}}</p>
+          <p>Ingredients:<br> {{this.strIngredient1}},{{this.strIngredient2}},{{this.strIngredient3}},{{this.strIngredient4}},<br>{{this.strIngredient5}},{{this.strIngredient6}},{{this.strIngredient7}},{{this.strIngredient8}},{{this.strIngredient9}},{{this.strIngredient10}}</p>
+          <p> Type of dish: {{this.strArea}}</p>
+          <p>Watch the video:{{this.strYoutube}}</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form method="POST" action="/recipe/create/{{this.idMeal}}">
+            {{!-- <button type="submit" class="btn btn-primary">Add to Favorites</button> --}}
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
 {{/each}}
+
+</div>

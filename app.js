@@ -17,6 +17,13 @@ const cookieParser = require("cookie-parser");
 app.set("view engine", "hbs");
 app.set("views", __dirname + "/views");
 
+//Helpers hbs
+hbs.registerHelper("parseUrl", (url) => {
+  //https://www.youtube.com/watch?v=1IszT_guI08
+  console.log(url.slice(url.indexOf("=") + 1, url.length));
+  return url.slice(url.indexOf("=") + 1, url.length);
+});
+
 //Middleware de body parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,14 +35,11 @@ app.use(express.static(__dirname + "/public"));
 //Middleware de sessions
 require("./config/session.config")(app);
 
-
-
 // 👇 Start handling routes here
 app.use("/", require("./routes/home.js"));
 app.use("/", require("./routes/auth.js"));
 app.use("/recipe", require("./routes/recipe.js"));
 app.use("/", require("./routes/profile.js"));
-
 
 //App listener
 app.listen(PORT, () => {

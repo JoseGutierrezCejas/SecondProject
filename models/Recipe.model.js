@@ -8,7 +8,6 @@ const recipeSchema = new Schema(
     strMealThumb: { type: String },
     strYoutube: { type: String },
     ingredients: { type : [String] },
-    
   },
   { timestamps: true }
 );

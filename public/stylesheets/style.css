@@ -1,6 +1,6 @@
 body {
-    font-family: "Marvel", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif,
-      sans-serif;
+  font-family: 'Amavos', sans-serif;
+                                                                                                                                                
   }
   
   .white {
@@ -23,8 +23,8 @@ body {
     color: #f0e008;
   }
   
-  .marvel-logo {
-    width: 90px;
+  .Yum-logo {
+    width: 500px;
   }
   
   .marvel-red {
@@ -35,7 +35,14 @@ body {
     background-color: #1dac8d;
   }
   .navbar-light .navbar-nav .nav-link {
-    color: white;
+    font-size:xx-large;
+    text-decoration: underline;
+    text-align:end;
+    margin-top: 30%;
+    /* margin:auto; */
+    padding: 15%;
+
+    color: rgb(7, 7, 7);
   }
   .navbar-light .navbar-nav .nav-link:hover {
     color: #08f061a2;
@@ -49,11 +56,11 @@ body {
   }
   
   .btn{
-      color: white;
+      color: rgb(255, 255, 255);
       border-color: white;
   }
   .btn:hover{
-      background-color: rgba(255, 0, 0, 0.548);
+      background-color: #1dac8d;
       color:white;
   }
   
@@ -103,13 +110,31 @@ body {
     align-items: center;
   }
 
+  .buttons {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 50px;
+  }
   .buttons  a {
 	border-radius: 100%;
 	text-decoration: none;
-  background-color: rgb(174, 104,66);
-	color: black;
+  background-color: #1dac8d;
+	color: rgb(250, 245, 245);
 	font-size: 22px;
 	padding: 14px 14px;
 	box-shadow: 0px 0px 10px #0a0a0a4f;
 	margin: 10px;
+}
+
+h1{
+text-align:center;
+margin-top: 2%;}
+h2{
+  text-align: center;
+}
+
+.remove{
+  aling-text:center
 }
